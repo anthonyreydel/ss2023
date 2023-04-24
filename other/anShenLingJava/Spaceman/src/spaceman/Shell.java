@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
+import spaceman.model.GuessChar;
 import spaceman.model.Spaceman;
 
 // TODO: add javadoc
@@ -100,12 +101,12 @@ SP> NEWGAME
 : _ _ _ _ _ _ _ _ :
 SP>*/
   void newGame(){
-    Spaceman newgame = new Spaceman();
-    newgame = newgame.create();
-    for(GuseeChar gs : newgame.getState().getWord().getCharacters()){
-      if(gs.check()) System.out.print(gs.get());
+    Spaceman newgame = Spaceman.create();
+    for(GuessChar gs : newgame.getState().getWord().getCharacters()){
+      if(gs.maybeGetCharacter().isPresent()) System.out.print(newgame.getState().getWord().getCompleteWord());
     }
   }
+  
   void newGameWord(String givenWord){}
   void guess(char guessChar){}
   void display(){}

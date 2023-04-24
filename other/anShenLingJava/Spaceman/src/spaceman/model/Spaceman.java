@@ -86,7 +86,7 @@ public class Spaceman {
         
         boolean allGuessed = true;
         for(GuessChar gs : state.getWord().getCharacters()){
-          if(!gs.check()) allGuessed = false;
+          if(!gs.maybeGetCharacter().isPresent()) allGuessed = false;
         }
         if(allGuessed) state.setCurrentPhase(Phase.FINISHED);
 

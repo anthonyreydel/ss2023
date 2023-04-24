@@ -23,8 +23,4 @@ public class GuessChar {
   public Optional<Character> maybeGetCharacter() {
     return character;
   }
-
-  public boolean check(){
-    return character.isPresent();
-  }
 }
