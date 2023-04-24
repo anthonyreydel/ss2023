@@ -16,6 +16,21 @@ public class GameState {
   }
 
   // TODO: add methods to set state values
+  public void setCurrentPhase(Phase currentPhase){
+    this.currentPhase = currentPhase;
+  }
+
+  public void setWordToGuess(WordToGuess wordToGuess){
+    this.wordToGuess = wordToGuess;
+  }
+
+  public void setCountdown(Countdown countdown){
+    this.countdown = countdown;
+  }
+
+  public void setInitialCountdownValue(int initialCountdownValue){
+    this.initialCountdownValue = initialCountdownValue;
+  }
 
   /**
    * Return the current phase of the game.
@@ -32,6 +47,10 @@ public class GameState {
 
   public int getCountdownValue() {
     return countdown.getCurrentValue();
+  }
+
+  public Countdown getCountdown(){
+    return countdown;
   }
 
   public int getMaximumCountdownValue() {

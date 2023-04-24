@@ -1,5 +1,7 @@
 package spaceman.model;
 
+import java.util.Random;
+
 /** Class that contains all possible words for guessing. */
 class WordDatabase {
 
@@ -13,6 +15,10 @@ class WordDatabase {
    */
   String getWord() {
     // TODO: implement
-    return null;
+
+    Random r = new Random();
+    int i = r.nextInt(5)-1;
+
+    return WORDS[i];
   }
 }

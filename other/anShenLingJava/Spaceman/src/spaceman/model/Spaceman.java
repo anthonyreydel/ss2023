@@ -1,5 +1,9 @@
 package spaceman.model;
 
+import java.nio.channels.IllegalSelectorException;
+
+import javax.sound.sampled.ReverbType;
+
 // TODO: add javadoc
 public class Spaceman {
 
@@ -10,6 +14,12 @@ public class Spaceman {
 
   private Spaceman(final String wordToGuess) {
     // TODO: set game state with word to guess
+
+    state.setCurrentPhase(Phase.RUNNING);
+    state.setWordToGuess(new WordToGuess(wordToGuess));
+    state.setCountdown(new Countdown(COUNTDOWN_START));
+    state.setInitialCountdownValue(COUNTDOWN_START);
+
   }
 
   /**
@@ -19,7 +29,8 @@ public class Spaceman {
    */
   public static Spaceman create() {
     // TODO: Ask word database for a word, return new Spaceman object with that word
-    return null;
+
+    return new Spaceman(new WordDatabase().getWord());
   }
 
   /**
@@ -30,7 +41,8 @@ public class Spaceman {
    */
   public static Spaceman create(String wordToGuess) {
     // TODO: Create a Spaceman object with the given word
-    return null;
+
+    return new Spaceman(wordToGuess);
   }
 
   public GameState getState() {
@@ -59,6 +71,27 @@ public class Spaceman {
     // reveal it/decrease the countdown.
     // TODO: If the countdown reached 0 or the full word is revealed, change the game state
     // accordingly.
+
+    switch (state.getCurrentPhase()){
+      case FINISHED:
+        throw new IllegalStateException("No game is currently running!");
+
+      case RUNNING:
+        boolean isInWord = state.getWord().guess(guessedCharacter);
+        if(!isInWord) state.getCountdown().decrease();
+
+        if(state.getCountdownValue() == 0){
+          state.setCurrentPhase(Phase.FINISHED); 
+        }
+        
+        boolean allGuessed = true;
+        for(GuessChar gs : state.getWord().getCharacters()){
+          if(!gs.check()) allGuessed = false;
+        }
+        if(allGuessed) state.setCurrentPhase(Phase.FINISHED);
+
+        return isInWord;
+    }
     return false;
   }
 
@@ -73,5 +106,14 @@ public class Spaceman {
   public void forfeit() {
     // TODO: Implement the game end (tip: this can probably be the same logic as the
     // end-case in `#guess`.)
+
+    switch (state.getCurrentPhase()){
+      case FINISHED:
+        throw new IllegalSelectorException();
+
+      case RUNNING: 
+        state.getWord().revealAll();
+        state.setCurrentPhase(Phase.FINISHED);
+    }
   }
 }

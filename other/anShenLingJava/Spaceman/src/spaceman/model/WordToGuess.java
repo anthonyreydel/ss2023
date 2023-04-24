@@ -2,6 +2,9 @@ package spaceman.model;
 
 import java.util.List;
 
+import javax.naming.InvalidNameException;
+import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
+
 // TODO: Add Javadoc
 public class WordToGuess {
 
@@ -14,6 +17,11 @@ public class WordToGuess {
     // All characters except for space (" ") should be initialized as hidden
     // GuessChar.
     // Spaces (" ") should be initialized as revealed GuessChar.
+
+    for(char i : completeWord.toCharArray()){
+      if(i == ' ') revealedCharacters.add(new GuessChar(i));
+      else revealedCharacters.add(new GuessChar());
+    }
   }
 
   /** Return the complete word. */
@@ -47,11 +55,24 @@ public class WordToGuess {
     // TODO: implement. "revealing" a character means replacing the empty GuessChar
     // object at the corresponding
     // position in `revealedCharacters` with the correct character.
-    return false;
+
+    boolean isInWord = false;
+
+    for(int i = 0; i < completeWord.length(); i++){
+      if(guessedCharacter == completeWord.toCharArray()[i]){
+        revealedCharacters.set(i, new GuessChar(guessedCharacter));
+        isInWord = true;
+      }
+    }
+    return isInWord;
   }
 
   /** Reveal all characters. */
   void revealAll() {
     // TODO: implement.
+
+    for(char i : completeWord.toCharArray()){
+      revealedCharacters.add(new GuessChar(i));
+    }
   }
 }

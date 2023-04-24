@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.List;
+
 import spaceman.model.Spaceman;
 
 // TODO: add javadoc
@@ -27,6 +30,14 @@ public class Shell {
   //        |  \  |
   //        |  /\ |
 
+  private static final List<String> flyingSaucer = Arrays.asList(
+                                                    "         _.---._\n       .'       '.\n",
+                                                    "   _.-~===========~-._\n", 
+                                                    "  (___________________)\n", 
+                                                    "        \\_______/\n",
+                                                    "         |     |\n",
+                                                    "         |_0/  |\n",
+                                                    "         |  \\  |\n         |  /\\ |\n");
   // TODO: add String constants for 'SP> ' prompt and others, if necessary
 
   private Spaceman game;
@@ -54,6 +65,23 @@ public class Shell {
       // TODO: add prompt, read user input and handle the commands by parsing and calling the
       // corresponding method
       // (if a separate method makes sense - see below)
+
+      System.out.print("SP>");
+      String input = in.readLine();
+      String[] tokens = input.trim().split("\\s+");
+
+      if(tokens[0].equals("NEWGAME")){
+        if(tokens.length == 1) newGame();
+        else newGameWord(tokens[1]);
+      }
+
+      if(tokens[0].equals("GUESS")){
+        guess(tokens[1].charAt(0));
+      }
+
+      if(tokens[0].equals("FORFEIT")){
+        forfeit();
+      }
     }
   }
 
@@ -63,5 +91,24 @@ public class Shell {
   // * GUESS $CHAR
   // * DISPLAY
   // * FORFEIT
+
+  /*NEWGAME: Startet ein neues Spiel mit einem zufällig ausgewähltem Wort. Eventuell laufende Spiele werden ohne Nachfrage beendet.
+Die Shell zeigt anschliessend das versteckte Wort mit folgender Ausgabe an:
+: H I D D E N W O R D :, wobei alle versteckten Buchstaben durch einen Unterstrich ("_") ersetzt werden und alle Buchstaben (versteckt und sichtbar) durch ein Leerzeichen voneinander getrennt sind.
+Beispiel für das Wort "Spaceman" mit 8 * '_':
+SP> NEWGAME
+: _ _ _ _ _ _ _ _ :
+SP>*/
+  void newGame(){
+    Spaceman newgame = new Spaceman();
+    newgame = newgame.create();
+    for(GuseeChar gs : newgame.getState().getWord().getCharacters()){
+      if(gs.check()) System.out.print(gs.get());
+    }
+  }
+  void newGameWord(String givenWord){}
+  void guess(char guessChar){}
+  void display(){}
+  void forfeit(){}
 
 }
