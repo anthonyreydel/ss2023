@@ -28,6 +28,7 @@ public class Shell {
       if(tokens[0].equals("test") || tokens[0].equals("")){
         Random rd = new Random(System.currentTimeMillis());
         int tempX = rd.nextInt(100)+1;
+	if(tokens[0].equals("test")) tempX=-1;
         int tempY = rd.nextInt(100)+1;
         int tempNumberOfBees = rd.nextInt(tempX * tempY / 2 + 1) + 1;
         int tempNumberOfFlowers = tempNumberOfBees;
@@ -40,7 +41,8 @@ public class Shell {
           System.out.print("#" + (i+1) + "\t");
           for(int j = 0; j < table.x; j++){
             if(table.cells[i*table.x+j].isBee) System.out.print("B ");
-            else if(!table.cells[i*table.x+j].isBee) System.out.print(table.cells[i*table.x+j].numberOfSB + " ");
+	    else if(table.cells[i*table.x+j].isEmpty) System.out.print("  ");
+            else if(!table.cells[i*table.x+j].isBee && !table.cells[i*table.x+j].isEmpty) System.out.print(table.cells[i*table.x+j].numberOfSB + " ");
           }
           System.out.println("");
         }
