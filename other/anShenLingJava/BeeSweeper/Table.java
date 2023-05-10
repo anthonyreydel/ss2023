@@ -1,10 +1,9 @@
 import java.util.Random;
-import java.util.ArrayList;
 
 public class Table{
     public int numberOfBees;
     public int numberOfFlowers;
-    public int x, y, numberOfCells;
+    public int x, y, numberOfCells, numberOfNotEmptyCells;
     public Cell[] cells;
 
     public Table(int numberOfBees, int numberOfFlowers, int x, int y) {
@@ -26,9 +25,10 @@ public class Table{
                 //
 
         if(this.x == -1){
-            this.numberOfCells = (9*y*y-6*y+1)/4;
             int howManyColumns = (3*y-1)/2;
-            int howManyNotEmptyCells = (2*y*y-y+1)/2;
+            this.numberOfCells = howManyColumns*howManyColumns;
+            this.numberOfNotEmptyCells = (2*y*y-y+1)/2;
+            this.x = howManyColumns;
             int howManyBees = this.numberOfBees;
             Random rd = new Random(System.currentTimeMillis());
 
@@ -36,27 +36,29 @@ public class Table{
             
             for(int i = 0; i < this.numberOfCells; i++){
                 tempCells[i] = new Cell(false);
+                tempCells[i].isEmpty = true;
             }
             
             for(int j = 0; j < y; j++){
-                int howManyNotEmptyCellsInARow =  (3*y-1)/2-Math.abs(j-(y+1)/2)*2;
                 int howManyEmptyCellsInARow = Math.abs(j+1-(y+1)/2)*2;
+                int howManyNotEmptyCellsInARow =  howManyColumns-howManyEmptyCellsInARow;
 
                 for(int i = 0; i < howManyNotEmptyCellsInARow; i++){
-                    int currentPosition = j*howManyColumns + howManyEmptyCellsInARow/2 + i + 1;
+                    int currentPosition = j*howManyColumns + howManyEmptyCellsInARow/2 + i;
                     tempCells[currentPosition].isEmpty = false;
                 }
             }
 
             while(howManyBees > 0){
                 int tempPosition = rd.nextInt(this.numberOfCells);
-                if(!tempCells[tempPosition].isBee){
+                if(!tempCells[tempPosition].isBee && !tempCells[tempPosition].isEmpty){
                     tempCells[tempPosition].isBee = true;
                     howManyBees--;
                 } 
             }
 
             for(int i = 0; i < this.numberOfCells; i++){
+                if(tempCells[i].isEmpty) continue;
                 if(i-howManyColumns-1 >= 0 && i-howManyColumns-1 <this.numberOfCells){
                     if(tempCells[i-howManyColumns-1].isEmpty == false && tempCells[i-howManyColumns-1].isBee && (i+1)%x != 1){
                         tempCells[i].numberOfSB++;
@@ -103,6 +105,7 @@ public class Table{
 
         } else if(this.x > 0) {
             this.numberOfCells = x*y;
+            this.numberOfNotEmptyCells = this.numberOfCells;
             int howManyBees = this.numberOfBees;
             Random rd = new Random(System.currentTimeMillis());
 
