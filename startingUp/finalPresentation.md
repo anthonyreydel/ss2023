@@ -1,3 +1,14 @@
+- In today's world of social media, people are more divided than ever before. It’s especially true when we want to participate in some activity or event. It seems easy to message our friends through numerous instant messaging softwares, but it's actually so hard to find people who want to do the same thing with us. But still, we want to meet people, like-minded people, in real life, and do interesting things together. That, is what we want to help everyone with.
+
+- We want to provide our users an all-in-one platform all about activities. We'll develop tools for every one to organize activitiy for themselves, we'll build a community which helps people reach each other to participate in activities together, we'll provide services to help organizers to reach their audience with efficiency. We'll do all these things, and we'll do them well. We call it Evitivity, Every Activity, Every One, all at once.
+
+- There hasn't been a platform like us, we know it. And with this comes great responsiblity upon us, we also know it. Our mission, our vision, and our team, will all be shown to you with this presentation. First, I'd like to introduce you to our team.
+
+- We are a small group of three. First is our Chief Marketing Officer Xiao Chen. Second on the far right is our Chief Techology Officer Dominik Weis. And last, is me in the middle, taking the role of Chief Executive Officer.
+- Now, let's hear what Dominik, our CTO, wants to tell us about.
+
+- ---------------------------------
+
 - First let’s take a look at our cost structure. As you can see from the graph, our cost increase steadily with the development of our business. Like most businesses, staff costs takes the biggest part in our cost structure, which is marked in blue. The stripe marked in orange is our assumption for market expenses, which will increase significantly in 2024, at this point we’ll begin our second marketing campaign and also starting to expand our range of service.
 
 - Then this is our revenue model again. As you can see we try to mix our revenue sources as even as possible, so that we are not too dependent on just one revenue source. But I would like to point out that advertisement is one of the bigger part in this, both on our own platform and of our collaborations with external advertisement agencies, as marked orange and blue here. Ticket sales and management software licensing are also our main source of income, wich counterbalance the advertisement part.The last is revenue through our services of event management, which only take a very small part. This is because we don’t plan on relying too much on this service, as this area of business would require great amount of human labor.
