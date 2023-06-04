@@ -4,7 +4,7 @@
 
 - There hasn't been a platform like us, we know it. And with this comes great responsiblity upon us, we also know it. Our mission, our vision, and our team, will all be shown to you with this presentation. First, I'd like to introduce you to our team.
 
-- We are a small group of three. First is our Chief Marketing Officer Xiao Chen. Second on the far right is our Chief Techology Officer Dominik Weis. And last, is me in the middle, taking the role of Chief Executive Officer.
+- We are a small group of three. First is our Chief Marketing Officer Xiao Chen. Second on the bottom is our Chief Techology Officer Dominik Weis. And last, is me on the upper right, taking the role of Chief Executive Officer.
 - Now, let's hear what Dominik, our CTO, wants to tell us about.
 
 - ---------------------------------
