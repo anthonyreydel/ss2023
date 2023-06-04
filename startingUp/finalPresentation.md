@@ -2,12 +2,10 @@
 
 - We want to provide our users an all-in-one platform all about activities. We'll develop tools for every one to organize activitiy for themselves, we'll build a community which helps people reach each other to participate in activities together, we'll provide services to help organizers to reach their audience with efficiency. We'll do all these things, and we'll do them well. We call it Evitivity, Every Activity, Every One, all at once.
 
-- There hasn't been a platform like us, we know it. And with this comes great responsiblity upon us, we also know it. Our mission, our vision, and our team, will all be shown to you with this presentation. First, I'd like to introduce you to our team.
-
-- We are a small group of three. First is our Chief Marketing Officer Xiao Chen. Second on the bottom is our Chief Techology Officer Dominik Weis. And last, is me on the upper right, taking the role of Chief Executive Officer.
+- First, I'd like to introduce you to our team. We are a small group of three. First is our Chief Marketing Officer Xiao Chen. Second on the bottom is our Chief Techology Officer Dominik Weis. And last, is me on the upper right, taking the role of Chief Executive Officer.
 - Now, let's hear what Dominik, our CTO, wants to tell us about.
 
-- ---------------------------------
+---------------------------------
 
 - First let’s take a look at our cost structure. As you can see from the graph, our cost increase steadily with the development of our business. Like most businesses, staff costs takes the biggest part in our cost structure, which is marked in blue. The stripe marked in orange is our assumption for market expenses, which will increase significantly in 2024, at this point we’ll begin our second marketing campaign and also starting to expand our range of service.
 
