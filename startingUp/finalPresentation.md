@@ -7,9 +7,9 @@
 
 ---------------------------------
 
-- First let’s take a look at our cost structure. As you can see, our cost increase steadily with the development of our business. Staff costs takes the biggest part in our cost structure, which is marked in blue. The stripe marked in orange is our assumption for market expenses, which will increase significantly in 2024, at this point we’ll begin our second marketing campaign and also starting to expand our range of service.
+- First let’s take a look at our cost structure. Our cost increase steadily with the development of our business. Staff costs takes the biggest part in our cost structure, which is marked in blue. The stripe marked in orange is our assumption for market expenses, which will increase significantly in 2024, at this point we’ll begin our second marketing campaign and also starting to expand our range of service.
 
-- Then this is our revenue model again. As you can see we try to mix our revenue sources as even as possible, advertisement is one of the bigger part in this, in the meantime ticket sales and management software licensing are also our main source of income, wich counterbalance the advertisement part.
+- Then this is our revenue model again. We try to mix our revenue sources as even as possible, advertisement is one of the bigger part in this, in the meantime ticket sales and management software licensing are also our main source of income, wich counterbalance the advertisement part.
 
 - Lastly here is a comparison between our revenue and cost developments. As you can see our business begins to be profitable at around the middle of 2024, at which point we have already entered the market for some time and are preparing to expand our range of services. And thus before this time we’ll need raise funding to cover our development expenses.
 
