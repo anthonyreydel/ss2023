@@ -39,7 +39,8 @@ public class Shell {
           && !tokens[0].equals("reveal") 
           && !tokens[0].equals("mark") 
           && !tokens[0].equals("unmark")
-          && !tokens[0].equals("giveup")){
+          && !tokens[0].equals("giveup")
+	  && !tokens[0].equals("help")){
         System.out.println("Please give a correct input!");
 
         System.out.print("Input: ");
@@ -192,7 +193,11 @@ public class Shell {
       }
 
       if(tokens[0].equals("giveup")){
-        System.out.println("You pussy!");
+	if(!gameRunning){
+		System.out.println("There is currently no game running, what are you giving up for?\n\nStart a newgame using \"newgame\" command.\n");
+		continue;
+	}
+	System.out.println("You pussy!");
         printRealTable(table, tokens);
         gameRunning = false;
         continue;
@@ -200,6 +205,19 @@ public class Shell {
 
       if(tokens[0].equals("")){
         continue;
+      }
+
+      if(tokens[0].equals("help")){
+	System.out.println("You can use following commands: " + "\n\n" 
+				+ "reveal [column coordination] [row coordination]: " + "\t\t" + "reveal a cell" + "\n"
+				+ "mark [column coordination] [row coordination]: " + "\t\t\t" + "mark a cell as Bee" + "\n"
+				+ "unmark [column coordination] [row coordination]: " + "\t\t" + "unmark a marked cell" + "\n\n"
+				+ "newgame: " + "\t\t\t\t\t\t\t" + "start a newgame" + "\n"
+				+ "giveup: " + "\t\t\t\t\t\t\t" + "give up current game" + "\n"
+				+ "exit: " + "\t\t\t\t\t\t\t\t" + "exit this software" + "\n"
+				+ "help: " + "\t\t\t\t\t\t\t\t" + "show help table" + "\n");
+
+	continue;
       }
 
       if(tokens[0].equals("exit")){
